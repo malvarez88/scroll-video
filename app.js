@@ -10,7 +10,7 @@ const controller = new ScrollMagic.Controller();
 
 //SCENE
 let scene = new ScrollMagic.Scene({
-    duration: 20000,
+    duration: 25000,
     triggerElement: intro,
     triggerHook: 0
 })
@@ -21,7 +21,7 @@ let scene = new ScrollMagic.Scene({
 
 //VIDEO ANIMATION
 
-let accelamount = 0.1;
+let accelamount = 0.5;
 let scrollops = 0;
 let delay = 0;
 
