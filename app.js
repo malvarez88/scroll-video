@@ -10,7 +10,7 @@ const controller = new ScrollMagic.Controller();
 
 //SCENE
 let scene = new ScrollMagic.Scene({
-    duration: 6000,
+    duration: 20000,
     triggerElement: intro,
     triggerHook: 0
 })
@@ -25,8 +25,15 @@ let accelamount = 0.1;
 let scrollops = 0;
 let delay = 0;
 
-scene.on('update', e => {
-    scrollpos = e.scrollPos;
+scene.on("update", e => {
+    scrollpos = e.scrollPos / 1000;
+});
+
+setInterval(() => {
+    delay += (scrollpos - delay) * accelamount;
     
-console.log("🚀 ~ file: app.js:31 ~ e:", e)
-})
+    video.currentTime = scrollpos;
+    // video.currentTime = delay;
+}, 33.3) 
+//video rate - check it
+
